@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @garden.name %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @garden.type %>
+</p>
+
+<p>
+  <strong>Structure:</strong>
+  <%= @garden.structure %>
+</p>
+
+<p>
+  <strong>Started:</strong>
+  <%= @garden.started %>
+</p>
+
+<p>
+  <strong>Sun:</strong>
+  <%= @garden.sun %>
+</p>
+
+<p>
+  <strong>Soil:</strong>
+  <%= @garden.soil %>
+</p>
+
+<p>
+  <strong>Drainage:</strong>
+  <%= @garden.drainage %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @garden.location %>
+</p>
+
+<%= link_to 'Edit', edit_garden_path(@garden) %> |
+<%= link_to 'Back', gardens_path %>

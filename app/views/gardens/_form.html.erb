@@ -1,0 +1,49 @@
+<%= form_for(@garden) do |f| %>
+  <% if @garden.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@garden.errors.count, "error") %> prohibited this garden from being saved:</h2>
+
+      <ul>
+      <% @garden.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :type %><br>
+    <%= f.text_field :type %>
+  </div>
+  <div class="field">
+    <%= f.label :structure %><br>
+    <%= f.text_field :structure %>
+  </div>
+  <div class="field">
+    <%= f.label :started %><br>
+    <%= f.date_select :started %>
+  </div>
+  <div class="field">
+    <%= f.label :sun %><br>
+    <%= f.text_field :sun %>
+  </div>
+  <div class="field">
+    <%= f.label :soil %><br>
+    <%= f.text_field :soil %>
+  </div>
+  <div class="field">
+    <%= f.label :drainage %><br>
+    <%= f.text_field :drainage %>
+  </div>
+  <div class="field">
+    <%= f.label :location_id %><br>
+    <%= f.text_field :location_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

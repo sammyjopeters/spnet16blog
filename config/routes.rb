@@ -1,5 +1,10 @@
 Spnet2016::Application.routes.draw do
+<<<<<<< HEAD
   root to: "page#home"
+=======
+  resources :journal_entries
+  resources :gardens
+>>>>>>> Created Locations, Gardens and Garden Journals
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
