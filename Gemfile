@@ -17,6 +17,7 @@ gem 'dotenv-rails', '~> 2.1', :groups => [:development, :test]
 
 group :test do
   gem 'rspec-rails', '~> 3.5', '>= 3.5.2'
+  gem 'shoulda-matchers', '~> 3.1', '>= 3.1.1'
 end
 
 group :doc do
