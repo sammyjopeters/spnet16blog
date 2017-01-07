@@ -1,5 +1,6 @@
 class GardensController < ApplicationController
   before_action :set_garden, only: [:show, :edit, :update, :destroy]
+  before_action :set_up_garden_options, only: [:new, :edit]
 
   # GET /gardens
   # GET /gardens.json
@@ -70,5 +71,14 @@ class GardensController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def garden_params
       params.require(:garden).permit(:name, :type, :structure, :started, :sun, :soil, :drainage, :location_id)
+    end
+
+    def set_up_garden_options
+      path = File.join(Rails.root, 'lib')
+      @garden_styles = YAML::load(File.open("#{path}/garden_styles.yml"))
+      @drainage_types = YAML::load(File.open("#{path}/drainage.yml"))
+      @structure_types = YAML::load(File.open("#{path}/garden_structures.yml"))
+      @soil_types = YAML::load(File.open("#{path}/soils.yml"))
+      @sun_types = YAML::load(File.open("#{path}/sun.yml"))
     end
 end

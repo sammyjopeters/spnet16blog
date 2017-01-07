@@ -16,32 +16,32 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :type %><br>
-    <%= f.text_field :type %>
+    <%= f.label :garden_type %><br>
+    <%= f.select :garden_type, options_for_select( @garden_styles.map { |value| [ value.capitalize, value ] }) %>
   </div>
   <div class="field">
     <%= f.label :structure %><br>
-    <%= f.text_field :structure %>
+    <%= f.select :structure, options_for_select( @structure_types.map { |value| [ value.capitalize, value ] }) %>
   </div>
   <div class="field">
     <%= f.label :started %><br>
-    <%= f.date_select :started %>
+    <%= f.date_select :started, order: [:day, :month, :year] %>
   </div>
   <div class="field">
     <%= f.label :sun %><br>
-    <%= f.text_field :sun %>
+    <%= f.select :sun, options_for_select( @sun_types.map { |value| [ value.capitalize, value ] }) %>
   </div>
   <div class="field">
     <%= f.label :soil %><br>
-    <%= f.text_field :soil %>
+    <%= f.select :soil, options_for_select( @soil_types.map { |value| [ value.capitalize, value ] }) %>
   </div>
   <div class="field">
     <%= f.label :drainage %><br>
-    <%= f.text_field :drainage %>
+    <%= f.select :drainage, options_for_select( @drainage_types.map { |value| [ value.capitalize, value ] }) %>
   </div>
   <div class="field">
-    <%= f.label :location_id %><br>
-    <%= f.text_field :location_id %>
+    <%= f.label :location_id, "Location" %><br>
+    <%= f.collection_select :location_id, Location.all, :id, :name %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -13,6 +13,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'sprockets', '~> 3.5', '>= 3.5.2'
 gem 'dotenv-rails', '~> 2.1', :groups => [:development, :test]
+gem 'byebug'
 
 
 group :test do
