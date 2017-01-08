@@ -5,6 +5,7 @@ rvm:
 services:
   - postgresql
 before_script:
-  - psql -c "CREATE USER spnet2016 WITH PASSWORD 'spnet2016';" -U postgres
   - psql -c 'create database spnet2016_test;' -U postgres
-script: bundle exec rspec spec
+  - psql -c "CREATE USER spnet2016 WITH PASSWORD 'spnet2016';" -U postgres
+  - bundle exec rake db:migrate
+script: bundle exec rspec
