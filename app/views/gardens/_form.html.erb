@@ -1,0 +1,49 @@
+<%= form_for(@garden) do |f| %>
+  <% if @garden.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@garden.errors.count, "error") %> prohibited this garden from being saved:</h2>
+
+      <ul>
+      <% @garden.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :garden_type %><br>
+    <%= f.select :garden_type, options_for_select( @garden_styles.map { |value| [ value.capitalize, value ] }) %>
+  </div>
+  <div class="field">
+    <%= f.label :structure %><br>
+    <%= f.select :structure, options_for_select( @structure_types.map { |value| [ value.capitalize, value ] }) %>
+  </div>
+  <div class="field">
+    <%= f.label :started %><br>
+    <%= f.date_select :started, order: [:day, :month, :year] %>
+  </div>
+  <div class="field">
+    <%= f.label :sun %><br>
+    <%= f.select :sun, options_for_select( @sun_types.map { |value| [ value.capitalize, value ] }) %>
+  </div>
+  <div class="field">
+    <%= f.label :soil %><br>
+    <%= f.select :soil, options_for_select( @soil_types.map { |value| [ value.capitalize, value ] }) %>
+  </div>
+  <div class="field">
+    <%= f.label :drainage %><br>
+    <%= f.select :drainage, options_for_select( @drainage_types.map { |value| [ value.capitalize, value ] }) %>
+  </div>
+  <div class="field">
+    <%= f.label :location_id, "Location" %><br>
+    <%= f.collection_select :location_id, Location.all, :id, :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

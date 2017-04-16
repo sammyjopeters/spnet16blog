@@ -1,7 +1,11 @@
 language: ruby
 rvm:
- - 2.3
- - jruby
- - rbx-2
-# uncomment and edit the following line if your project needs to run something other than `rake`:
-# script: bundle exec rspec spec
+ - 2.2
+ - 2.3.0
+services:
+  - postgresql
+before_script:
+  - psql -c 'create database spnet2016_test;' -U postgres
+  - psql -c "CREATE USER spnet2016 WITH PASSWORD 'spnet2016';" -U postgres
+  - bundle exec rake db:migrate
+script: bundle exec rspec
