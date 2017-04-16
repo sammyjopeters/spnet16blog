@@ -1,0 +1,72 @@
+<h1> Manage all your journally things</h1>
+
+<%= link_to 'Write a new garden journal entry', new_journal_entry_path, class: 'btn btn-primary btn-lg' %>
+
+<br />
+<h2><%= @entries.count %> Garden Journal Entries written</h2>
+<table class="table table-striped">
+  <tr>
+    <th>Date</th>
+    <th>Byline</th>
+    <th>Garden</th>
+    <th></th>
+  </tr>
+  <% @entries.each do | entry | %>
+    <tr>
+      <td><%= entry.created_at.strftime('%b %d, %Y')%></td>
+      <td><%= entry.byline %></td>
+      <td><%= entry.garden.name %></td>
+      <td>
+        <%= link_to 'More', entry, class:'btn btn-default btn-sm' %>
+        <%= link_to 'Edit', edit_journal_entry_path(entry.id), class: 'btn btn-default btn-sm' %>
+        <%= link_to 'Delete', entry , method: :delete, data: { confirm: 'Are you sure?'}, class: 'btn btn-default btn-sm' %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<hr>
+<br />
+
+<h1> Other info:</h1>
+<h3>You shouldn't need to edit this often.</h3>
+
+<h3>Gardens I've made:</h3>
+<table class="table table-striped">
+  <tr>
+    <th>Garden</th>
+    <th>Garden Type</th>
+    <th>Date Garden Started</th>
+    <th></th>
+  </tr>
+  <% @gardens.each do | garden | %>
+    <tr>
+      <td><%= garden.name %></td>
+      <td><%= garden.garden_type %></td>
+      <td><%= garden.created_at.strftime('%b %d, %Y') %></td>
+      <td>
+        <%= link_to 'More', garden, class:'btn btn-default btn-sm' %>
+        <%= link_to 'Edit', edit_garden_path(garden.id), class: 'btn btn-default btn-sm' %>
+        <%= link_to 'Delete', garden , method: :delete, data: { confirm: 'Are you sure?' } %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<br />
+<h3>Locations I've had gardens:</h3>
+<h4>Note: To add more of these, you'll need to add them through the console (or write the CRUD for it, you lazy sod)</h4>
+<table class="table table-striped">
+  <tr>
+    <th>Location</th>
+    <th>Lat/Lon</th>
+    <th>Gardens Listed:</th>
+  </tr>
+  <% @locations.each do | location | %>
+    <tr>
+      <td><%= location.name %></td>
+      <td><%= location.location_lat %>/ <%= location.location_long %></td>
+      <td><%= get_gardens(location).count %></td>
+    </tr>
+  <% end %>
+</table>
