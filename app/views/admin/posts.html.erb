@@ -1,0 +1,25 @@
+<h1>Manage Yo Blog</h1>
+
+<%= link_to 'Write a new post', new_post_path, class: 'btn btn-primary btn-lg' %>
+<br /><br />
+
+<h2><%= @posts.count %> posts</h2>
+<table class="table table-striped">
+  <tr>
+    <th>Date</th>
+    <th>Title</th>
+    <th>Author</th>
+    <th></th>
+  </tr>
+  <% @posts.each do | post| %>
+    <tr>
+      <td><%= post.created_at.strftime('%b %d, %Y')%></td>
+      <td><%= post.title %></td>
+      <td><%= post.author %></td>
+      <td>
+        <%= link_to 'Edit', edit_post_path(post.id), class: 'btn btn-default btn-sm' %>
+        <%= link_to 'Delete', post , method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default btn-sm' %>
+      </td>
+    </tr>
+  <% end %>
+</table>

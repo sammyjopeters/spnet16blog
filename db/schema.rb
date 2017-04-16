@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170103025005) do
+ActiveRecord::Schema.define(version: 20170416112016) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,16 @@ ActiveRecord::Schema.define(version: 20170103025005) do
     t.float    "ann_rainfall"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.string   "title"
+    t.string   "byline"
+    t.string   "author"
+    t.text     "body"
+    t.datetime "created_at",                                            null: false
+    t.datetime "updated_at",                                            null: false
+    t.string   "main_image", default: "http://lorempixel.com/1024/683"
   end
 
   add_foreign_key "gardens", "locations"

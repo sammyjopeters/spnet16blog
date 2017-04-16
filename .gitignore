@@ -45,3 +45,5 @@ bower.json
 
 #eww osx
 .DS_STORE
+
+.idea/

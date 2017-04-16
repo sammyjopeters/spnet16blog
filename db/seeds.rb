@@ -82,3 +82,13 @@ test_journal = JournalEntry.create([
 	}
 
 ])
+
+blog_entry = Post.create([
+	{
+	title: 'Test Post Times',
+	byline: 'For the first time, a developer rolls their own wordpress.',
+	author: 'Sammyjo',
+	body: "All I've got to do is pass as an ordinary human being. Simple. What could possibly go wrong? You know how I sometimes have really brilliant ideas? Did I mention we have comfy chairs? Heh-haa! Super squeaky bum time! I'm the Doctor. Well, they call me the Doctor. I don't know why. I call me the Doctor too. I still don't know why. The way I see it, every life is a pile of good things and bad things.…hey.…the good things don't always soften the bad things; but vice-versa the bad things don't necessarily spoil the good things and make them unimportant. It's art! A statement on modern society, 'Oh Ain't Modern Society Awful?'! I am the last of my species, and I know how that weighs on the heart so don't lie to me! It's a fez. I wear a fez now. Fezes are cool."
+	}
+
+])
