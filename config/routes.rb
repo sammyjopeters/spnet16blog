@@ -1,4 +1,5 @@
 Spnet2016::Application.routes.draw do
+  devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
   root to: "page#home"
   resources :journal_entries, :gardens, :posts
 
