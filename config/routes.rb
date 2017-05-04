@@ -1,6 +1,6 @@
 Spnet2016::Application.routes.draw do
-  devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
-  root to: "page#home"
+  devise_for :users, controllers: { omniauth_callbacks: 'callbacks', registrations: 'registrations' }
+  root to: 'page#home'
   resources :journal_entries, :gardens, :posts
 
     get 'admin/manage_blog', to: 'admin#posts'
