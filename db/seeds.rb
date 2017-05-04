@@ -93,18 +93,3 @@ blog_entry = Post.create([
 
 ])
 
-if Rails.env == ('development' || 'test' )
-	User.create([{
-									 email: 'redskulldc@yahoo.com.au',
-									 password: 'crisis',
-									 password_confirmation: 'crisis'
-
-							 },
-							 {
-									 email: 'sretepmas@gmail.com',
-									 password: 'dundurrabin1963',
-									 password_confirmation: 'dundurrabin1963'
-							 }
-							])
-end
-
