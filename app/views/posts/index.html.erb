@@ -1,19 +1,22 @@
 <div class="container">
-    <header class="header">
-        <h1>Sam's Blog<span>Anything, and everything.</span></h1>
-    </header>
-    <div class="content">
-        <!-- trianglify pattern container -->
-        <div class="pattern pattern--hidden"></div>
-        <!-- cards -->
-        <div class="wrapper">
-          <% @posts.each do |post| %>
-              <%= render 'shared/post', post: post %>
-          <% end %>
-          <!-- /cards -->
-        </div>
+  <header class="header">
+    <h1>Sam's Blog<span>Anything, and everything.</span></h1>
+  </header>
+  <div class="content">
+    <!-- trianglify pattern container -->
+    <div class="pattern pattern--hidden"></div>
+    <!-- cards -->
+    <div class="wrapper">
+
+
+      <% @posts.each do |post| %>
+        <%= render 'shared/post', post: post %>
+      <% end %>
+
+      <!-- /cards -->
     </div>
-    <!-- /container -->
+  </div>
+  <!-- /container -->
 </div>
 
 
