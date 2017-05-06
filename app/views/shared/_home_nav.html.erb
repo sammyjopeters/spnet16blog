@@ -1,0 +1,25 @@
+<!-- Navigation -->
+<nav id="mainNav" class="navbar fixed-top navbar-toggleable-md navbar-light">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarExample" aria-controls="navbarExample" aria-expanded="false" aria-label="Toggle navigation">
+    Menu <i class="fa fa-bars"></i>
+  </button>
+  <div class="container">
+    <a class="navbar-brand" href="#page-top"><i class="fa fa-smile-o"></i> <span class="light">Sam</span> Peters</a>
+    <div class="collapse navbar-collapse" id="navbarExample">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <%= link_to 'About', '#about', class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Work', '#work', class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Contact', '#contact', class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Blog', posts_path, class: 'nav-link' %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
