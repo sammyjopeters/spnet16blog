@@ -15,6 +15,7 @@
 //= require tether
 //= require bootstrap-sprockets
 //= require_tree ../../../vendor/assets/javascripts/.
+//= require disqus_rails
 //= require_tree .
 
 
