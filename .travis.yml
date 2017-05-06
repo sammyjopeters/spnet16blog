@@ -1,11 +1,14 @@
 language: ruby
 rvm:
- - 2.2
- - 2.3.0
+- 2.2
+- 2.3.0
 services:
-  - postgresql
+- postgresql
 before_script:
-  - psql -c 'create database spnet2016_test;' -U postgres
-  - psql -c "CREATE USER spnet2016 WITH PASSWORD 'spnet2016';" -U postgres
-  - bundle exec rake db:migrate
+- psql -c 'create database spnet2016_test;' -U postgres
+- psql -c "CREATE USER spnet2016 WITH PASSWORD 'spnet2016';" -U postgres
+- bundle exec rake db:migrate
 script: bundle exec rspec
+env:
+  matrix:
+    secure: XaBYC+qoqOaVaa8ZUYGhOiFSCRC55HCvAg33EoaAdJkKsaKqB0QaZ7dPqZYEyMwJW9KyNb7laEscCGmX/AhIkuUctZQzhhzgdn1Qp1PSsWXDIvZoY2d9F7jPjTJBy/JBFXSAwjtF4TVPZaZ4BVz6wEO34Tn1Z9wUR5ePAUNW2vxd0j9HnXrtssHvBkDCCJNYiq6W905TxqVyGwDHk6IXvsd+k/vfnDcD2nITQMV3nhvHre73btQew0BAVOJxoAGESfsLDcKt7uqmKkex3j1KuVSAmiEFqiZWjzWkhdEsskrhMnsU+q2rzdY7QIzKzzZL/XpR2PNwuoYkthJFqnrUXMQq7LWcENi2WV4Tmexk5gF9vqymFX2x0r+oYHO+RzZ9XSl1WahHNARTy0AfUya/IzPxZeCOqHDruIuWcGKP2vJBErzJXdIL/nK0LQbtt8xM024YUF3XBoVSYIyrTOtHh40BTn6GA86X6hPjyrgBAaJznfThgxW1i0kmMnoJ7iFVsqwsgmc0VyzwKYPBW8TJbpMGjoqlP+awO08Nt+ctQF+PzMZRIyxaQsaYhyOQZUaLWYqSSqxPPgJFSLtGC5a1Htz6ubJom72G6i8vKKKibJq+PdwK13s/QgZ4gZzdOhZpMh8Qkw08p85nQptR3BJoB1Aou/JLF9umylmyjGMn3Kc=

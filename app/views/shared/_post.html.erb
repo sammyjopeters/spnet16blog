@@ -24,6 +24,10 @@
                                 <span class="meta__date"><%= post.created_at.strftime("%Y-%d-%m") %></span>
                             </div>
                             <%= post.body %>
+                          <br /><br />
+                          <hr>
+                          <h4>Comments on "<%= post.title %>"</h4>
+                            <%= disqus_thread %>
                         </div>
                     </div>
                 </div>
