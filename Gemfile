@@ -17,6 +17,8 @@ gem 'sprockets', '~> 3.5', '>= 3.5.2'
 gem 'dotenv-rails', '~> 2.1', :groups => [:development, :test]
 gem 'byebug'
 gem 'disqus_rails', '~> 0.0.6'
+gem 'paperclip', '~> 5.1'
+
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'
