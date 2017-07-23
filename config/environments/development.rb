@@ -27,5 +27,9 @@ Spnet2016::Application.configure do
   # number of complex assets.
   config.assets.debug = true
 
-  config.assets.prefix = '/assets_dev'
+  config.paperclip_defaults = {
+      url: '/assets/:class/:id/:style/:basename.:extension',
+      path: ':rails_root/public/assets/:class/:id/:style/:basename.:extension'
+  }
+
 end
