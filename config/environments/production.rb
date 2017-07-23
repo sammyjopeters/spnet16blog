@@ -36,10 +36,10 @@ Spnet2016::Application.configure do
   config.assets.version = '1.0'
 
   # These setting are to get CKEditor working in production mode.
-  # config.assets.enabled = true
-  # config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
-  # config.assets.precompile += Ckeditor.assets
-  # config.assets.precompile += %w(ckeditor/*)
+  config.assets.enabled = true
+  config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
+  config.assets.precompile += Ckeditor.assets
+  config.assets.precompile += %w(ckeditor/*)
 
   # Specifies the header that your server uses for sending files.
   # config.action_dispatch.x_sendfile_header = "X-Sendfile" # for apache

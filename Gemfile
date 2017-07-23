@@ -27,7 +27,6 @@ source 'https://rails-assets.org' do
 end
 
 group :production do
-  gem 'non-stupid-digest-assets', '~> 1.0', '>= 1.0.9'
   gem 'rails_12factor'
 end
 
