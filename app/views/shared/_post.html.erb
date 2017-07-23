@@ -9,7 +9,7 @@
         </clipPath>
       </defs>
       <image clip-path="url(#<%= post.id %>-clip-path)#disqus_thread" width="1920" height="1200"
-             xlink:href="<%= image_url("posts/#{post.main_image}") %>"></image>
+             xlink:href="<%= image_url(post.main_image) %>"></image>
     </svg>
     <div class="card__content">
       <i class="card__btn-close fa fa-times"></i>
