@@ -1,3 +1,12 @@
+GIT
+  remote: git://github.com/galetahub/ckeditor.git
+  revision: 11d3a5b905646c6fd397f7710f95fb9eb29f0865
+  ref: 11d3a5b
+  specs:
+    ckeditor (4.2.2)
+      cocaine
+      orm_adapter (~> 0.5.0)
+
 GEM
   remote: https://rubygems.org/
   remote: https://rails-assets.org/
@@ -54,9 +63,6 @@ GEM
       sass (>= 3.4.19)
     builder (3.2.2)
     byebug (9.0.6)
-    ckeditor (4.2.4)
-      cocaine
-      orm_adapter (~> 0.5.0)
     climate_control (0.2.0)
     cocaine (0.5.8)
       climate_control (>= 0.0.3, < 1.0)
@@ -233,7 +239,7 @@ DEPENDENCIES
   aws-sdk (~> 2.10, >= 2.10.15)
   bootstrap (~> 4.0.0.alpha3)
   byebug
-  ckeditor (~> 4.1, >= 4.1.6)
+  ckeditor!
   coffee-rails (~> 4.0.0)
   devise (~> 4.2)
   disqus_rails (~> 0.0.6)
