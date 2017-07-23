@@ -1,4 +1,5 @@
 Spnet2016::Application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
   devise_for :users, controllers: { omniauth_callbacks: 'callbacks', registrations: 'registrations' }
   root to: 'page#home'
   resources :journal_entries, :gardens
