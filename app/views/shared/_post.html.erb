@@ -23,7 +23,7 @@
           <span class="meta__author"><%= post.author %></span>
           <span class="meta__date"><%= post.created_at %></span>
         </div>
-        <%= post.body %>
+        <%= post.body.html_safe %>
       </div>
     </div>
   </div>
