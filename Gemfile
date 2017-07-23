@@ -24,6 +24,9 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'
 end
 
+group :production do
+  gem 'rails_12factor'
+end
 
 group :test do
   gem 'rspec-rails', '~> 3.5', '>= 3.5.2'
