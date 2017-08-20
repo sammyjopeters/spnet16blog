@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
-    render :layout => 'blog'
+    render :layout => 'blog_old'
   end
 
   # GET /posts/1
