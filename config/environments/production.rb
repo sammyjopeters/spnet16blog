@@ -35,6 +35,12 @@ Spnet2016::Application.configure do
   # Version of your assets, change this if you want to expire all your assets.
   config.assets.version = '1.0'
 
+  # These setting are to get CKEditor working in production mode.
+  config.assets.enabled = true
+  config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
+  config.assets.precompile += Ckeditor.assets
+  config.assets.precompile += %w(ckeditor/*)
+
   # Specifies the header that your server uses for sending files.
   # config.action_dispatch.x_sendfile_header = "X-Sendfile" # for apache
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
@@ -80,6 +86,7 @@ Spnet2016::Application.configure do
 
   config.paperclip_defaults = {
       storage: :s3,
+      url: ':s3_domain_url',
       s3_credentials: {
           bucket: ENV['AWS_S3_BUCKET_NAME'],
           access_key_id: ENV['AWS_ACCESS_KEY_ID'],
@@ -88,4 +95,6 @@ Spnet2016::Application.configure do
       },
       path: 'production/:class/:id/:filename'
   }
+
+
 end
